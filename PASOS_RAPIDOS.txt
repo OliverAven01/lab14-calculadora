@@ -1,0 +1,141 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║           GUÍA RÁPIDA: SUBIR PROYECTO A GITHUB                    ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📌 OPCIÓN 1: USAR SCRIPT AUTOMÁTICO (MÁS FÁCIL)
+═══════════════════════════════════════════════════════════════════
+
+1️⃣  Crear repositorio en GitHub:
+   • Ve a https://github.com
+   • Clic en "+" → "New repository"
+   • Nombre: lab14-calculadora
+   • NO marques "Initialize with README"
+   • Clic en "Create repository"
+
+2️⃣  Ejecutar el script:
+   • Doble clic en: subir-a-github.cmd
+   • Sigue las instrucciones en pantalla
+   • Pega la URL de tu repositorio cuando se solicite
+
+3️⃣  ¡Listo! Tu código está en GitHub
+
+═══════════════════════════════════════════════════════════════════
+
+📌 OPCIÓN 2: COMANDOS MANUALES
+═══════════════════════════════════════════════════════════════════
+
+Abre CMD o PowerShell y ejecuta:
+
+cd lab14
+git init
+git add .
+git commit -m "Primer commit: Calculadora Simple"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/lab14-calculadora.git
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════════
+
+📦 CREAR RELEASE (DISTRIBUIR EJECUTABLE)
+═══════════════════════════════════════════════════════════════════
+
+1️⃣  Crear el paquete ZIP:
+   • Doble clic en: crear-release.cmd
+   • Se creará: lab14-v1.0.0-win-x64.zip
+
+2️⃣  Subir a GitHub Releases:
+   • Ve a tu repositorio en GitHub
+   • Clic en "Releases" → "Create a new release"
+   • Tag: v1.0.0
+   • Title: Calculadora Simple v1.0.0
+   • Arrastra el archivo ZIP
+   • Clic en "Publish release"
+
+3️⃣  ¡Listo! Ahora otros pueden descargar tu aplicación
+
+═══════════════════════════════════════════════════════════════════
+
+🔧 DESDE RIDER (ALTERNATIVA)
+═══════════════════════════════════════════════════════════════════
+
+1️⃣  Configurar Git en Rider:
+   • VCS → Enable Version Control Integration → Git
+   • VCS → Commit (Ctrl+K)
+   • Selecciona todos los archivos
+   • Mensaje: "Primer commit: Calculadora Simple"
+   • Clic en "Commit"
+
+2️⃣  Conectar con GitHub:
+   • VCS → Git → Remotes
+   • Clic en "+"
+   • Name: origin
+   • URL: https://github.com/TU_USUARIO/lab14-calculadora.git
+   • Clic en "OK"
+
+3️⃣  Subir cambios:
+   • VCS → Git → Push (Ctrl+Shift+K)
+   • Clic en "Push"
+
+═══════════════════════════════════════════════════════════════════
+
+✅ VERIFICAR QUE TODO FUNCIONÓ
+═══════════════════════════════════════════════════════════════════
+
+1. Ve a: https://github.com/TU_USUARIO/lab14-calculadora
+2. Deberías ver:
+   ✓ Program.cs
+   ✓ lab14.csproj
+   ✓ README.md
+   ✓ .gitignore
+
+3. Si creaste un Release:
+   • Clic en "Releases"
+   • Deberías ver "v1.0.0"
+   • Con el archivo ZIP descargable
+
+═══════════════════════════════════════════════════════════════════
+
+❓ SOLUCIÓN DE PROBLEMAS
+═══════════════════════════════════════════════════════════════════
+
+❌ "git no se reconoce como comando"
+   → Instala Git: https://git-scm.com/download/win
+
+❌ "Authentication failed"
+   → Configura tu token de GitHub:
+     git config --global user.name "Tu Nombre"
+     git config --global user.email "tu@email.com"
+   → Usa GitHub Desktop o autenticación por navegador
+
+❌ "remote origin already exists"
+   → Elimina el remoto existente:
+     git remote remove origin
+   → Vuelve a agregarlo
+
+❌ "No se puede crear el ZIP"
+   → Verifica que existe la carpeta lab14\publish
+   → Ejecuta primero: dotnet publish -c Release
+
+═══════════════════════════════════════════════════════════════════
+
+📚 ARCHIVOS CREADOS PARA TI
+═══════════════════════════════════════════════════════════════════
+
+✓ GUIA_SUBIR_PROYECTO.md    - Guía completa detallada
+✓ lab14/README.md            - Documentación del proyecto
+✓ lab14/.gitignore          - Archivos a ignorar en Git
+✓ subir-a-github.cmd        - Script automático para subir
+✓ crear-release.cmd         - Script para crear paquete ZIP
+✓ PASOS_RAPIDOS.txt         - Este archivo (referencia rápida)
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 RECOMENDACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Para la primera vez, usa el SCRIPT AUTOMÁTICO:
+1. Doble clic en: subir-a-github.cmd
+2. Sigue las instrucciones
+3. ¡Listo en 2 minutos!
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,50 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║         PROYECTO LAB14 - CALCULADORA SIMPLE EN .NET 9.0          ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+✅ PROYECTO COMPLETADO EXITOSAMENTE
+
+📁 Estructura del Proyecto:
+   lab14/
+   ├── Program.cs              (Código fuente de la calculadora)
+   ├── lab14.csproj            (Configuración del proyecto)
+   └── publish/                (Archivos publicados listos para distribuir)
+       ├── lab14.exe           ⭐ Ejecutable principal
+       ├── lab14.dll
+       ├── lab14.deps.json
+       ├── lab14.runtimeconfig.json
+       └── lab14.pdb
+
+🎯 Funcionalidades de la Calculadora:
+   • Suma
+   • Resta
+   • Multiplicación
+   • División (con protección contra división por cero)
+   • Interfaz de consola interactiva
+   • Validación de entrada de datos
+
+📦 Publicación Completada:
+   ✓ Configuración: Release (optimizado)
+   ✓ Framework: .NET 9.0
+   ✓ Tipo: Portable (requiere .NET instalado)
+   ✓ Ubicación: lab14\publish\
+
+🚀 Cómo Ejecutar:
+   1. Navega a: lab14\publish\
+   2. Ejecuta: lab14.exe
+   3. Sigue las instrucciones en pantalla
+
+📖 Documentación:
+   • GUIA_PUBLICACION.md - Guía completa paso a paso
+   • Este archivo - Resumen rápido del proyecto
+
+💡 Próximos Pasos (Opcionales):
+   • Crear un instalador con WiX o Inno Setup
+   • Publicar como archivo único (single-file)
+   • Incluir el runtime de .NET (self-contained)
+   • Agregar más operaciones matemáticas
+   • Crear una interfaz gráfica (GUI)
+
+═══════════════════════════════════════════════════════════════════
+Proyecto creado y publicado exitosamente el 22 de noviembre de 2025
+═══════════════════════════════════════════════════════════════════
