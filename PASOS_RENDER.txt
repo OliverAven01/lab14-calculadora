@@ -1,0 +1,221 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║         🚀 GUÍA RÁPIDA: DESPLEGAR EN RENDER                      ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+✅ PROYECTO ACTUALIZADO Y SUBIDO A GITHUB
+
+Tu repositorio ahora incluye:
+  • lab14/ - Aplicación de consola (original)
+  • lab14-web/ - API REST (para Render) ⭐
+
+
+═══════════════════════════════════════════════════════════════════
+📋 PASOS PARA DESPLEGAR EN RENDER
+═══════════════════════════════════════════════════════════════════
+
+┌─ PASO 1: CREAR CUENTA EN RENDER ─────────────────────────────────┐
+│                                                                   │
+│  1. Ve a: https://render.com                                     │
+│  2. Clic en "Get Started" o "Sign Up"                            │
+│  3. Selecciona "Sign up with GitHub" (Recomendado)               │
+│  4. Autoriza a Render                                            │
+│  5. Completa tu perfil                                           │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+┌─ PASO 2: CREAR WEB SERVICE ──────────────────────────────────────┐
+│                                                                   │
+│  1. En el Dashboard, clic en "New +" (arriba derecha)            │
+│  2. Selecciona "Web Service"                                     │
+│  3. Conecta tu cuenta de GitHub si es necesario                  │
+│  4. Busca: OliverAven01/lab14-calculadora                        │
+│  5. Clic en "Connect"                                            │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+┌─ PASO 3: CONFIGURAR EL SERVICIO ─────────────────────────────────┐
+│                                                                   │
+│  Name:                                                           │
+│    lab14-calculadora-api                                         │
+│                                                                   │
+│  Region:                                                         │
+│    Oregon (US West)                                              │
+│                                                                   │
+│  Branch:                                                         │
+│    main                                                          │
+│                                                                   │
+│  Root Directory: ⚠️ MUY IMPORTANTE                              │
+│    lab14-web                                                     │
+│                                                                   │
+│  Environment:                                                    │
+│    Docker                                                        │
+│                                                                   │
+│  Instance Type:                                                  │
+│    Free                                                          │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+┌─ PASO 4: DESPLEGAR ──────────────────────────────────────────────┐
+│                                                                   │
+│  1. Revisa toda la configuración                                │
+│  2. Clic en "Create Web Service"                                │
+│  3. Espera 5-10 minutos mientras se despliega                    │
+│  4. Monitorea el progreso en la pestaña "Logs"                  │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+┌─ PASO 5: VERIFICAR ──────────────────────────────────────────────┐
+│                                                                   │
+│  Cuando veas "Your service is live 🎉":                         │
+│                                                                   │
+│  1. Copia la URL proporcionada                                   │
+│     Ejemplo: https://lab14-calculadora-api.onrender.com         │
+│                                                                   │
+│  2. Abre en el navegador:                                        │
+│     https://TU-URL.onrender.com                                  │
+│                                                                   │
+│  3. Deberías ver el JSON de bienvenida                          │
+│                                                                   │
+│  4. Prueba Swagger:                                              │
+│     https://TU-URL.onrender.com/swagger                          │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+🧪 PROBAR LA API
+═══════════════════════════════════════════════════════════════════
+
+Reemplaza TU-URL con tu URL de Render:
+
+Suma:
+https://TU-URL.onrender.com/api/sumar?a=10&b=5
+
+Resta:
+https://TU-URL.onrender.com/api/restar?a=20&b=8
+
+Multiplicación:
+https://TU-URL.onrender.com/api/multiplicar?a=7&b=6
+
+División:
+https://TU-URL.onrender.com/api/dividir?a=100&b=4
+
+Swagger (Documentación Interactiva):
+https://TU-URL.onrender.com/swagger
+
+
+═══════════════════════════════════════════════════════════════════
+📊 ENDPOINTS DISPONIBLES
+═══════════════════════════════════════════════════════════════════
+
+GET  /                          → Información de la API
+GET  /api/sumar?a=X&b=Y        → Suma dos números
+GET  /api/restar?a=X&b=Y       → Resta dos números
+GET  /api/multiplicar?a=X&b=Y  → Multiplica dos números
+GET  /api/dividir?a=X&b=Y      → Divide dos números
+POST /api/calcular             → Calcula con JSON
+GET  /swagger                   → Documentación interactiva
+
+
+═══════════════════════════════════════════════════════════════════
+⚠️ IMPORTANTE: ROOT DIRECTORY
+═══════════════════════════════════════════════════════════════════
+
+NO OLVIDES configurar:
+
+Root Directory: lab14-web
+
+Sin esto, Render no encontrará el Dockerfile y fallará.
+
+
+═══════════════════════════════════════════════════════════════════
+❓ SOLUCIÓN DE PROBLEMAS
+═══════════════════════════════════════════════════════════════════
+
+❌ "Build failed"
+   → Verifica que Root Directory sea: lab14-web
+   → Revisa los logs de build
+
+❌ "Application failed to start"
+   → Revisa los logs de la aplicación
+   → Verifica que el Dockerfile esté correcto
+
+❌ "Cannot find repository"
+   → Ve a GitHub Settings → Applications
+   → Otorga permisos a Render
+
+❌ La API está "Sleeping"
+   → Normal en plan gratuito
+   → Primera request tarda ~30 segundos
+   → Luego funciona normal
+
+
+═══════════════════════════════════════════════════════════════════
+📚 DOCUMENTACIÓN COMPLETA
+═══════════════════════════════════════════════════════════════════
+
+Para instrucciones detalladas, abre:
+
+📄 GUIA_DESPLIEGUE_RENDER.md  → Guía completa paso a paso
+📄 lab14-web/README.md        → Documentación de la API
+
+
+═══════════════════════════════════════════════════════════════════
+✅ CHECKLIST
+═══════════════════════════════════════════════════════════════════
+
+Antes de empezar, verifica:
+
+□ Proyecto subido a GitHub
+□ Cuenta de Render creada
+□ Repositorio conectado a Render
+
+Durante la configuración:
+
+□ Name: lab14-calculadora-api
+□ Root Directory: lab14-web ⚠️
+□ Environment: Docker
+□ Instance Type: Free
+
+Después del despliegue:
+
+□ Status: Live
+□ URL obtenida
+□ Endpoint raíz probado
+□ Swagger funcionando
+□ Al menos un cálculo probado
+
+
+═══════════════════════════════════════════════════════════════════
+🎯 TIEMPO ESTIMADO
+═══════════════════════════════════════════════════════════════════
+
+Crear cuenta:        2 minutos
+Configurar servicio: 3 minutos
+Despliegue:          5-10 minutos
+Pruebas:             2 minutos
+─────────────────────────────────
+TOTAL:               12-17 minutos
+
+
+═══════════════════════════════════════════════════════════════════
+🎉 RESULTADO FINAL
+═══════════════════════════════════════════════════════════════════
+
+Tendrás una API REST pública en internet:
+
+✓ Accesible desde cualquier lugar
+✓ Con documentación Swagger
+✓ Gratis (plan Free de Render)
+✓ HTTPS automático
+✓ Despliegue automático desde GitHub
+
+
+═══════════════════════════════════════════════════════════════════
+
+              ¡LISTO PARA DESPLEGAR! 🚀
+
+═══════════════════════════════════════════════════════════════════
